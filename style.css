@@ -25,12 +25,12 @@ body {
 }
 
 #age-int {
-    font-size: 3em; /* Larger font for the main age number */
+    font-size: 3em; 
 }
 
 #age-decimal {
-    font-size: 1.2em; /* Smaller font for decimal values */
-    opacity: 0.7; /* Slightly faded to emphasize main age */
+    font-size: 1.2em; 
+    opacity: 0.7;
 }
 
 input, button {
