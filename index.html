@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precise Age Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Enter Your Birthdate:</h1>
+    <input type="date" id="birthdate-input" placeholder="MM/DD/YYYY">
+    <button onclick="startClock()">Start</button>
+
+    <div id="age-display" style="display:none;">
+      <span id="age-int">0</span><span id="age-decimal">.00000000</span>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
