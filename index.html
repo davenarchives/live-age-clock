@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Age Clock</title>
+  <title>Live Age Clock</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,31 @@
     <button onclick="startClock()">Start</button>
 
     <div id="age-display" style="display:none;">
-      <span id="age-int">0</span><span id="age-decimal">.00000000</span>
+      <div class="time-unit">
+        <span id="years">0</span>
+        <label>Years</label>
+      </div>
+
+      <div class="time-unit">
+        <span id="days">0</span>
+        <label>Days</label>
+      </div>
+
+      <div class="time-unit">
+        <span id="hours">0</span>
+        <label>Hours</label>
+      </div>
+
+      <div class="time-unit">
+        <span id="minutes">0</span>
+        <label>Minutes</label>
+      </div>
+
+      <div class="time-unit">
+        <span id="seconds">0</span>
+        <label>Seconds</label>
+      </div>
+      
     </div>
   </div>
   <script src="script.js"></script>
