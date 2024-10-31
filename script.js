@@ -17,17 +17,24 @@ function startClock() {
   document.getElementById('birthdate-input').style.display = 'none';
   document.querySelector("button").style.display = 'none';
   document.querySelector("h1").textContent = "Your Age:";
-  document.getElementById('age-display').style.display = 'block';
+  document.getElementById('age-display').style.display = 'flex';
 
-  setInterval(updateAge, 100);
+  setInterval(updateAge, 1000);
 }
 
 function updateAge() {
   const now = new Date();
   const ageInMs = now - birthDate;
-  const ageInYears = ageInMs / (1000 * 60 * 60 * 24 * 365.25);
-  const ageParts = ageInYears.toFixed(8).split('.');
+  
+  const years   = Math.floor(ageInMs / (1000 * 60 * 60 * 24 * 365.25));
+  const days    = Math.floor((ageInMs % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24));
+  const hours   = Math.floor((ageInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((ageInMs % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((ageInMs % (1000 * 60)) / 1000);
 
-  document.getElementById('age-int').textContent = ageParts[0];
-  document.getElementById('age-decimal').textContent = '.' + ageParts[1];
+  document.getElementById('years')  .textContent = years;
+  document.getElementById('days')   .textContent = days;
+  document.getElementById('hours')  .textContent = hours;
+  document.getElementById('minutes').textContent = minutes;
+  document.getElementById('seconds').textContent = seconds;
 }
