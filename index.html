@@ -8,12 +8,73 @@
 </head>
 <body>
   <div class="container">
-    <h1>Enter Your Birthdate:</h1>
-    <input type="date" id="birthdate-input" placeholder="MM/DD/YYYY">
-    <button onclick="startClock()">Start</button>
+    <h1>Enter Your Birthdate</h1>
 
+    <div class="date-inputs">
+      <select id="month">
+        <option value="" disabled selected>Month</option>
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+      </select>
+
+      <select id="day">
+        <option value="" disabled selected>Day</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+
+      <input type="number" id="year" placeholder="Year" min="1900" max="${new Date().getFullYear()}" step="1">
+    </div>
+
+    <div class="time-inputs">
+      <label for="time"><h3>Time of Birth</h3>(Optional):</label>
+      <input type="time" id="time">
+      <button onclick="startClock()">Start</button>
+    </div>
+
+    <!-- Age Display Section -->
+    <h1 id="age-label" style="display:none;">Age</h1>
     <div id="age-display" style="display:none;">
-      <div class="time-unit">
+      <div class="year-unit">
         <span id="years">0</span>
         <label>Years</label>
       </div>
@@ -37,7 +98,6 @@
         <span id="seconds">0</span>
         <label>Seconds</label>
       </div>
-      
     </div>
   </div>
   <script src="script.js"></script>
