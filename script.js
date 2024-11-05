@@ -65,3 +65,11 @@ function resetClock() {
   document.getElementById('minutes').textContent = '0';
   document.getElementById('seconds').textContent = '0';
 }
+document.addEventListener("DOMContentLoaded", function() {
+  const navTitle = document.querySelector(".nav-title");
+  const navItems = document.getElementById("nav-items");
+
+  navTitle.addEventListener("click", function() {
+    navItems.classList.toggle("nav-active");
+  });
+});
