@@ -14,12 +14,13 @@ body {
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    padding-top: 2rem; 
 }
 
 /* Navigation Bar Styles */
 header {
     background-color: #333; 
-    padding: 10px 0; 
+    padding: 0.5rem 0; 
     position: fixed; 
     width: 100%; 
     top: 0; 
@@ -27,12 +28,12 @@ header {
     display: flex; 
     justify-content: space-between; 
     align-items: center;
-    padding: 0 2em; 
+    padding: 0 5%; /
 }
 
 .nav-title {
     color: white; 
-    font-size: 1.8em; 
+    font-size: 1.8rem; 
     font-weight: bold; 
     text-decoration: none; 
 }
@@ -41,17 +42,17 @@ nav ul {
     list-style-type: none; 
     display: flex; 
     justify-content: flex-end; 
-    margin: 1em 1em; 
+    margin: 1rem 1rem; 
 }
 
 nav ul li {
-    margin: 0.5em 1em; 
+    margin: 0.5rem 1rem; 
 }
 
 nav ul li a {
     color: white; 
     text-decoration: none; 
-    font-size: 1.5em;
+    font-size: 1.2rem;
 }
 
 nav ul li a:hover {
@@ -60,25 +61,25 @@ nav ul li a:hover {
 
 /* About Page Specific Styles */
 .container {
-    max-width: 800px;
-    padding: 20px;
-    margin-top: 100px; 
+    max-width: 90%;
+    padding: 1.5rem;
+    margin-top: 6rem; 
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1rem;
     line-height: 1.5; 
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 footer {
     margin-top: auto; 
-    padding: 20px;
+    padding: 1rem;
     background-color: #333;
     width: 100%;
     text-align: center;
@@ -88,14 +89,14 @@ footer {
 .how-to-use {
     list-style-position: inside; 
     padding: 0; 
-    margin: 20px 0; 
+    margin: 1.5rem 0; 
 }
 
 .how-to-use li {
     background: #444; 
-    padding: 10px; 
-    border-radius: 5px; 
-    margin-bottom: 10px; 
+    padding: 0.75rem; 
+    border-radius: 0.5rem; 
+    margin-bottom: 0.5rem; 
     transition: background 0.3s;
 }
 
@@ -103,24 +104,32 @@ footer {
     background: #555; 
 }
 
+/* Mobile-Specific Styles */
 @media (max-width: 600px) {
     nav ul {
         display: none; 
         flex-direction: column; 
         text-align: center;
     }
+
     header {
         flex-direction: column; 
-        padding: 0.5rem 1em;
+        padding: 0.5rem 5%;
     }
 
     .nav-title {
-        font-size: 1.5em; 
-        margin-bottom: 0.5em; 
+        font-size: 1.5rem; 
+        margin-bottom: 0.5rem; 
     }
 
     .container {
-        padding-top: 1em; 
-        margin-top: 120px; 
+        margin-top: 5rem; 
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
     }
 }
+
