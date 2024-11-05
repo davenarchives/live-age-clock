@@ -3,9 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,29 +14,29 @@
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 3em;
     margin-bottom: 20px;
-  }
-  
-  .container {
+}
+
+.container {
     text-align: center;
     max-width: 100%;
     padding: 20px;
-  }
-  
-  .date-inputs, .time-inputs {
+}
+
+.date-inputs, .time-inputs {
     display: flex;
     justify-content: center;
     gap: 10px; 
     margin-bottom: 15px;
     flex-wrap: nowrap; 
     margin-top: 30px;
-  }
-  
-  #age-display {
+}
+
+#age-display {
     font-size: 2.5em;
     font-weight: bold;
     margin-top: 20px;
@@ -44,99 +44,124 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-end;
-  }
-  
-  #age-label {
+}
+
+#age-label {
     font-size: 3em;
     margin-bottom: 10px;
-  }
-  
-  .time-unit, .year-unit {
+}
+
+.time-unit, .year-unit {
     text-align: center;
     display: flex;
     flex-direction: column; 
     align-items: center; 
-  }
-  
-  .year-unit {
+}
+
+.year-unit {
     margin: 0 20px; 
-  }
-  
-  .year-unit span {
+}
+
+.year-unit span {
     font-size: 6em; 
     color: #4CAF50; 
-  }
-  
-  .year-unit label {
+}
+
+.year-unit label {
     font-size: 1em; 
     opacity: 0.7; 
-  }
-  
-  .time-unit {
+}
+
+.time-unit {
     margin: 0 15px; 
     margin-bottom: 80px;
-  }
-  
-  .time-unit span {
+}
+
+.time-unit span {
     font-size: 2em; 
-  }
-  
-  .time-unit label {
+}
+
+.time-unit label {
     font-size: 1em; 
     margin-top: 10px; 
     opacity: 0.7; 
-  }
-  
-  /* Input and Button Styles */
-  input, select, button {
+}
+
+/* Input and Button Styles */
+    input, select, button {
     font-size: 1em;
     padding: 8px;
     border-radius: 5px;
     border: none;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: rgb(22, 191, 22);
     color: white;
-  }
-  
-  input[type="number"]#year {
+}
+
+input[type="number"]#year {
     width: 80px;
     text-align: left;
     padding: 0 10px;
-  }
-  
-  /* Mobile-Specific Adjustments for #age-display */
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     h1 {
-      font-size: 2em; 
+        font-size: 1em; 
     }
-  
+
     #age-label {
-      font-size: 2em;
+        font-size: 2em;
     }
-  
+
     #age-display {
-      font-size: 1.5em; /* General reduction to fit smaller screens */
-      gap: 15px; /* Add gap between time units for readability */
-      flex-direction: column; /* Stack for better alignment */
-      align-items: center;
+        font-size: 2.5em; 
+        gap: 30px; 
+        align-items: center;
+        flex-wrap: wrap;
     }
-  
+
     .year-unit span {
-      font-size: 4em; /* Larger font for years */
+        font-size: 4em; 
     }
-  
+
     .year-unit label {
-      font-size: 1em;
+        font-size: 0.5em;
     }
-  
-    .time-unit span {
-      font-size: 1.8em; /* Adjust size for better alignment */
-    }
-  
+
     .time-unit, .year-unit {
-      margin: 10px 0; /* Adjust margin for compact fit */
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        margin: 5px 10px 5px 10px; 
     }
-  }
-  
+
+    .time-unit span {
+        font-size: 2em; 
+    }
+
+    .time-unit label {
+        font-size: 0.5em;
+        opacity: 0.7;
+    }
+}
+
+#reset-button {
+    position: fixed; 
+    bottom: 30px; 
+    left: 30px; 
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; 
+    color: white; 
+    font-size: 0.5em; 
+    cursor: pointer; 
+    z-index: 1000; 
+}
+
+#reset-button:hover {
+    background-color: rgb(191, 53, 22); 
+}
+

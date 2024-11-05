@@ -44,3 +44,24 @@ function updateAge() {
   document.getElementById('minutes').textContent = minutes;
   document.getElementById('seconds').textContent = seconds;
 }
+function resetClock() {
+  // Hide age display section and show input fields again
+  document.getElementById('age-display').style.display = 'none';
+  document.querySelector("h1").style.display = ''; // Show "Enter Your Birthdate" heading
+  document.querySelector(".date-inputs").style.display = 'flex'; // Show date inputs
+  document.querySelector(".time-inputs").style.display = 'flex'; // Show time inputs
+  document.getElementById('age-label').style.display = 'none'; // Hide "Age:" label
+  
+  // Reset input values
+  document.getElementById('day').selectedIndex = 0;
+  document.getElementById('month').selectedIndex = 0;
+  document.getElementById('year').value = '';
+  document.getElementById('time').value = '';
+
+  // Clear age display
+  document.getElementById('years').textContent = '0';
+  document.getElementById('days').textContent = '0';
+  document.getElementById('hours').textContent = '0';
+  document.getElementById('minutes').textContent = '0';
+  document.getElementById('seconds').textContent = '0';
+}
