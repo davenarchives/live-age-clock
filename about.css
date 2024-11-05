@@ -106,30 +106,44 @@ footer {
 
 /* Mobile-Specific Styles */
 @media (max-width: 600px) {
-    nav ul {
-        display: none; 
-        flex-direction: column; 
-        text-align: center;
+    body {
+        padding-top: 0; /* Remove extra padding to align with header */
+        min-height: auto; /* Allow height to adapt to content */
     }
 
     header {
-        flex-direction: column; 
+        position: sticky; /* Header will stay at the top when scrolling down */
+        top: 0; /* Stick to the top of the viewport */
+        flex-direction: column;
         padding: 0.5rem 5%;
+        z-index: 1000; /* Keep header above other content */
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
     }
 
     .nav-title {
-        font-size: 1.5rem; 
-        margin-bottom: 0.5rem; 
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .container {
-        margin-top: 5rem; 
+        margin-top: 2rem; /* Ensure there is space between header and content */
+        padding-top: 1rem; /* Minor padding to make content more readable */
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin-top: 1rem;
         margin-bottom: 1.5rem;
     }
+
+    p, .how-to-use li {
+        font-size: 0.9rem;
+    }
 }
+
 
