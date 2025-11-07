@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Age Clock</title>
+  <link rel="icon" type="image/webp" href="../assets/images/lifespanclock.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <button type="button" class="brand brand-button" id="brand-toggle">
+      <span class="brand-logo" aria-hidden="true">
+        <i class="fa-solid fa-clock"></i>
+      </span>
+      <p class="brand-text">Live Age Clock</p>
+    </button>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="https://github.com/davenarchives/live-age-clock" target="_blank" rel="noopener noreferrer">Github</a>
+      <div class="nav-dropdown">
+        <button class="dropdown-toggle" id="theme-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+          Themes
+          <span class="dropdown-caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown-menu" id="theme-menu" role="menu">
+          <button type="button" class="dropdown-item is-active" data-theme-option="date">Date Timer</button>
+        <button type="button" class="dropdown-item" data-theme-option="decimal">Decimal</button>
+        <button type="button" class="dropdown-item" data-theme-option="digital">Digital Flip</button>
+      </div>
+    </div>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <section class="control-panel" aria-labelledby="control-title">
+      <div class="panel-header">
+        <h1 id="control-title">Enter Your Birthdate</h1>
+        <p>Kick off the live clock to see your age evolve in real time.</p>
+      </div>
+      <form id="birth-form" class="form-fields">
+        <div class="date-inputs">
+          <select id="month">
+            <option value="" disabled selected>Month</option>
+            <option value="0">January</option>
+            <option value="1">February</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="9">October</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+          </select>
+
+          <select id="day">
+            <option value="" disabled selected>Day</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+          </select>
+
+          <input type="number" id="year" placeholder="Year" min="1900" step="1" inputmode="numeric">
+        </div>
+
+        <div class="time-inputs">
+          <label for="time">
+            <span>Time of birth</span>
+            <small>(optional)</small>
+          </label>
+          <input type="time" id="time">
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="start-button" class="btn primary">Start Clock</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="clock-stage" class="clock-stage hidden" aria-live="polite">
+      <div class="theme-view theme-date active" data-theme-view="date">
+        <div class="hero-clock">
+          <div class="unit year">
+            <span id="years" class="value">00</span>
+            <span class="label">Year</span>
+          </div>
+          <div class="unit">
+            <span id="days" class="value">00</span>
+            <span class="label">Day</span>
+          </div>
+          <div class="unit">
+            <span id="hours" class="value">00</span>
+            <span class="label">Hour</span>
+          </div>
+          <div class="unit">
+            <span id="minutes" class="value">00</span>
+            <span class="label">Min</span>
+          </div>
+          <div class="unit">
+            <span id="seconds" class="value">00</span>
+            <span class="label">Sec</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-view theme-decimal" data-theme-view="decimal">
+        <div class="decimal-clock">
+          <div class="decimal-value">
+            <span id="decimal-year" class="value year-value">00</span>
+            <span id="decimal-fraction" class="value fraction">.00000000</span>
+          </div>
+          <div class="decimal-labels">
+            <span>Year</span>
+            <span>Second</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-view theme-digital" data-theme-view="digital">
+        <div class="flip-grid">
+          <div class="flip-card" data-flip-unit="year">
+            <div class="flip-display" aria-live="polite">00</div>
+            <span class="flip-label">Year</span>
+          </div>
+          <div class="flip-card" data-flip-unit="hour">
+            <div class="flip-display" aria-live="polite">00</div>
+            <span class="flip-label">Hour</span>
+          </div>
+          <div class="flip-card" data-flip-unit="minute">
+            <div class="flip-display" aria-live="polite">00</div>
+            <span class="flip-label">Min</span>
+          </div>
+          <div class="flip-card" data-flip-unit="second">
+            <div class="flip-display" aria-live="polite">00</div>
+            <span class="flip-label">Sec</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button type="button" id="reset-button" class="btn primary hidden reset-button">Reset</button>
+  </main>
+  <script src="../scripts/main.js"></script>
+</body>
+</html>

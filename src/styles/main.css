@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Kanit:wght@500&family=Lilita+One&display=swap');
+
+:root {
+    --navy: #031638;
+    --night: #020b1f;
+    --panel: #071b3d;
+    --panel-border: #0e2853;
+    --aqua: #6fdcff;
+    --teal: #3fe6c4;
+    --gold: #f7c46c;
+    --muted: #8fa4c2;
+    --white: #f6fbff;
+    --ink: #012640;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Lilita One', 'Baloo 2', 'Kanit', sans-serif;
+    background: radial-gradient(circle at 20% 20%, #061840, var(--night));
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--aqua);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem clamp(1.5rem, 4vw, 4.5rem);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 1.3rem;
+}
+
+.brand-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+    font: inherit;
+}
+
+.brand-button:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+}
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-logo i {
+    font-size: 1.4rem;
+    color: var(--ink);
+}
+
+.brand-text {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.primary-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    font-weight: 700;
+}
+
+.primary-nav a,
+.dropdown-toggle {
+    color: var(--ink);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.primary-nav a:hover,
+.primary-nav a:focus,
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    opacity: 0.65;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    font: inherit;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.dropdown-caret {
+    font-size: 0.8em;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    right: 0;
+    background: var(--aqua);
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    min-width: 190px;
+    padding: 0.25rem;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 20;
+}
+
+.nav-dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    background: none;
+    border: none;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    font: inherit;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus-visible {
+    background: rgba(1, 38, 64, 0.15);
+}
+
+.dropdown-item.is-active {
+    background: rgba(1, 38, 64, 0.25);
+}
+
+.hero {
+    flex: 1;
+    width: 100%;
+    padding: clamp(2rem, 5vh, 4rem) clamp(1.5rem, 6vw, 6rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    position: relative;
+    min-height: calc(100vh - 80px);
+}
+
+.clock-stage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-stage.hidden {
+    display: none;
+}
+
+.theme-view {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.theme-view.active {
+    display: flex;
+}
+
+.hero-clock {
+    width: min(1024px, 95vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2rem, 4vw, 5rem);
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.hero-clock .unit {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.hero-clock .value {
+    display: block;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.hero-clock .label {
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.hero-clock .year .value {
+    font-size: clamp(6rem, 24vw, 15rem);
+    color: var(--teal);
+    line-height: 0.85;
+}
+
+.hero-clock .year .label {
+    font-size: 1.2rem;
+}
+
+.decimal-clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-transform: uppercase;
+}
+
+.decimal-clock .decimal-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.decimal-clock .value {
+    font-size: clamp(3.5rem, 10vw, 6rem);
+}
+
+.decimal-clock .year-value {
+    color: var(--teal);
+    font-size: clamp(4.5rem, 12vw, 8rem);
+}
+
+.decimal-clock .fraction {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    color: var(--gold);
+}
+
+.decimal-labels {
+    display: flex;
+    justify-content: space-between;
+    width: min(320px, 80vw);
+    color: var(--muted);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+.flip-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+.flip-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+.flip-display {
+    position: relative;
+    min-width: clamp(90px, 18vw, 140px);
+    padding: 0.65em 0.5em;
+    border-radius: 14px;
+    background: #6BD7F5;
+    color: #0B1A33;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-weight: 700;
+    text-align: center;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.15);
+    transform-origin: center;
+    backface-visibility: hidden;
+    perspective: 800px;
+}
+
+.flip-display::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    background: #0B1A33;
+}
+
+.flip-card[data-flip-unit="year"] .flip-display {
+    background: #49C6B3;
+}
+
+.flip-display.flip-animate {
+    animation: flip-card 0.6s ease-in-out;
+}
+
+@keyframes flip-card {
+    0% {
+        transform: rotateX(0deg);
+    }
+    45% {
+        transform: rotateX(-90deg);
+    }
+    55% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+.control-panel {
+    width: min(640px, 95vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+}
+
+.panel-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+}
+
+.panel-header p {
+    color: var(--muted);
+    text-transform: none;
+    font-size: 1rem;
+}
+
+.form-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.date-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+select,
+input[type="number"],
+input[type="time"] {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--panel-border);
+    background: rgba(4, 18, 43, 0.8);
+    color: #9AA8BF;
+    padding: 0.85rem 1.1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    appearance: none;
+}
+
+input[type="number"] {
+    text-align: center;
+}
+
+select:focus,
+input:focus {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+}
+
+input::placeholder {
+    color: #9AA8BF;
+    opacity: 0.95;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(73%) sepia(8%) saturate(403%) hue-rotate(186deg) brightness(92%) contrast(88%);
+    opacity: 1;
+}
+
+input[type="time"]::-moz-focus-inner {
+    color: #9AA8BF;
+}
+
+
+.time-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-align: left;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.time-inputs small {
+    text-transform: none;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    border: none;
+    border-radius: 14px;
+    padding: 0.85rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn.primary {
+    background: var(--teal);
+    color: var(--ink);
+}
+
+.btn.primary:hover,
+.btn.primary:focus-visible {
+    transform: translateY(-2px);
+}
+
+.btn.ghost {
+    background: transparent;
+    border: 2px solid var(--muted);
+    color: var(--muted);
+}
+
+.btn.ghost:hover,
+.btn.ghost:focus-visible {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.hidden {
+    display: none !important;
+}
+
+body.has-results .theme-date .hero-clock .value {
+    text-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+body.has-results .control-panel {
+    display: none;
+}
+
+body.has-results .hero {
+    justify-content: center;
+}
+
+body.has-results #clock-stage.hidden {
+    display: none;
+}
+
+body.has-results #clock-stage {
+    display: flex;
+}
+
+body.has-results .reset-button {
+    display: inline-flex !important;
+}
+
+.reset-button {
+    position: absolute;
+    left: clamp(1.5rem, 4vw, 4rem);
+    bottom: clamp(1.5rem, 4vw, 4rem);
+    letter-spacing: 0.08em;
+    border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+    .hero-clock {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+
+    .primary-nav {
+        gap: 1rem;
+    }
+
+    .hero {
+        padding-top: 5rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Live Age Clock</title>
+  <link rel="icon" type="image/webp" href="../assets/images/lifespanclock.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/about.css">
+</head>
+<body>
+
+  <header class="site-header about-header">
+    <button type="button" class="brand brand-button" onclick="window.location.href='index.html'">
+      <span class="brand-logo" aria-hidden="true">
+        <i class="fa-solid fa-clock"></i>
+      </span>
+      <p class="brand-text">Live Age Clock</p>
+    </button>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="https://github.com/davenarchives/live-age-clock" target="_blank" rel="noopener noreferrer">Github</a>
+      <div class="nav-dropdown">
+        <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+          Themes
+          <span class="dropdown-caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <button type="button" class="dropdown-item is-active">Date Timer</button>
+          <button type="button" class="dropdown-item">Decimal</button>
+          <button type="button" class="dropdown-item">Digital Flip</button>
+        </div>
+      </div>
+      <a href="about.html" aria-current="page">About</a>
+    </nav>
+  </header>
+
+  <main class="about-wrapper">
+    <section class="about-hero">
+      <p class="eyebrow">Meet the revamped experience</p>
+      <h1>Built for live, glanceable age tracking</h1>
+      <p class="lede">
+        Enter your birth details once and jump into a full-screen clock that updates every second.
+        Swap between our Date Timer, Decimal stream, or the playful Digital Flip board whenever you want.
+      </p>
+      <div class="chip-row">
+        <span class="chip">Date Timer</span>
+        <span class="chip">Decimal View</span>
+        <span class="chip">Digital Flip</span>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>How it works</h2>
+      <ol class="how-to-use">
+        <li>Choose your month, day, year, and (optionally) your time of birth.</li>
+        <li>Hit <strong>Start Clock</strong> to hide the form and launch the live dashboard.</li>
+        <li>Use the <strong>Themes</strong> dropdown in the header to toggle between the three visual modes.</li>
+        <li>The Date Timer highlights years through seconds, Decimal shows a rolling fractional year, and Digital Flip animates each tick.</li>
+        <li>Select <strong>Reset</strong> in the bottom-left to return to the entry form.</li>
+      </ol>
+    </section>
+
+    <section class="about-section">
+      <h2>Why the new interface?</h2>
+      <p>
+        The refreshed UI keeps the layout bold, centered, and legible on any screen. The turquoise navigation bar matches
+        the live experience, while the hero controls and clock views share typography and color tokens for consistency.
+      </p>
+      <ul class="feature-list">
+        <li><span>Single-focus screens</span> — inputs and clocks never compete for space.</li>
+        <li><span>Theme-aware design</span> — every mode inherits the same palette for seamless switching.</li>
+        <li><span>Keyboard-friendly inputs</span> — dropdowns, number fields, and time pickers respond to shortcuts.</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>What’s next</h2>
+      <p>
+        We’re exploring custom palettes, saved birthdays, and additional clock styles. Drop ideas in the GitHub repo or fork it to build your own twist.
+      </p>
+      <a class="cta-link" href="https://github.com/davenarchives/live-age-clock" target="_blank" rel="noopener noreferrer">View the project on GitHub →</a>
+    </section>
+  </main>
+
+  <footer class="about-footer">
+    &copy; 2024 Live Age Clock. All rights reserved.
+  </footer>
+
+</body>
+</html>
